@@ -812,7 +812,7 @@ static int find_pm_qos_object_by_minor(int minor)
 static int pm_qos_power_open(struct inode *inode, struct file *filp)
 {
 	long pm_qos_class;
-
+	return 0;
 	pm_qos_class = find_pm_qos_object_by_minor(iminor(inode));
 	if (pm_qos_class >= PM_QOS_CPU_DMA_LATENCY) {
 		struct pm_qos_request *req = kzalloc(sizeof(*req), GFP_KERNEL);
@@ -830,6 +830,7 @@ static int pm_qos_power_open(struct inode *inode, struct file *filp)
 static int pm_qos_power_release(struct inode *inode, struct file *filp)
 {
 	struct pm_qos_request *req;
+	return 0;
 
 	req = filp->private_data;
 	pm_qos_remove_request(req);
@@ -844,7 +845,7 @@ static ssize_t pm_qos_power_read(struct file *filp, char __user *buf,
 {
 	s32 value;
 	struct pm_qos_request *req = filp->private_data;
-
+	return count;
 	if (!req)
 		return -EINVAL;
 	if (!pm_qos_request_active(req))
