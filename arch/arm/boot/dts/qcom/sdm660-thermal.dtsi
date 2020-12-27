@@ -18,26 +18,26 @@
 		qcom,thermal-vadc = <&pm660_vadc>;
 		qcom,adc-channel = <0x4c>;
 		qcom,poll-ms = <3000>;
-		qcom,start-delay = <60>;
+		qcom,start-delay = <120>;
 		zone@0 {
 			reg = <0>;
 			qcom,silver-khz = <1843200>;
 			qcom,gold-khz = <2150400>;
-			qcom,trip-deg = <39>;
+			qcom,trip-deg = <42>;
 		};
 
 		zone@1 {
 			reg = <1>;
 			qcom,silver-khz = <1747200>;
 			qcom,gold-khz = <2150400>;
-			qcom,trip-deg = <41>;
+			qcom,trip-deg = <43>;
 		};
 
 		zone@2 {
 			reg = <2>;
 			qcom,silver-khz = <1747200>;
 			qcom,gold-khz = <1958400>;
-			qcom,trip-deg = <43>;
+			qcom,trip-deg = <44>;
 		};
 
 		zone@3 {
@@ -51,7 +51,7 @@
 			reg = <4>;
 			qcom,silver-khz = <1747200>;
 			qcom,gold-khz = <1401600>;
-			qcom,trip-deg = <47>;
+			qcom,trip-deg = <46>;
 		};
 
 		zone@5 {
