@@ -16,12 +16,12 @@ export KBUILD_BUILD_USER="sohamsen"
 function sticker() {
     curl -s -X POST "https://api.telegram.org/bot1218234700:AAGfkmfWvuMZT-cqgkAeGc4jjTDsY-Fu9IQ/sendSticker" \
         -d sticker="CAACAgEAAxkBAAEnKnJfZOFzBnwC3cPwiirjZdgTMBMLRAACugEAAkVfBy-aN927wS5blhsE" \
-        -d chat_id=542658
+        -d chat_id="1210616327"
 }
 # Send info plox channel
 function sendinfo() {
     curl -s -X POST "https://api.telegram.org/bot1218234700:AAGfkmfWvuMZT-cqgkAeGc4jjTDsY-Fu9IQ/sendMessage" \
-        -d chat_id="542658" \
+        -d chat_id="1210616327" \
         -d "disable_web_page_preview=true" \
         -d "parse_mode=html" \
         -d text="<b>• Predator-Stormbreaker Kernel •</b>%0ABuild started on <code>Circle CI</code>%0AFor device <b>Xiaomi Redmi Note7/7S</b> (lavender)%0Abranch <code>$(git rev-parse --abbrev-ref HEAD)</code>(master)%0AUnder commit <code>$(git log --pretty=format:'"%h : %s"' -1)</code>%0AUsing compiler: <code>${KBUILD_COMPILER_STRING}</code>%0AStarted on <code>$(date)</code>%0A<b>Build Status:</b>#Stable"
@@ -31,7 +31,7 @@ function push() {
     cd AnyKernel
     ZIP=$(echo *.zip)
     curl -F document=@$ZIP "https://api.telegram.org/bot1218234700:AAGfkmfWvuMZT-cqgkAeGc4jjTDsY-Fu9IQ/sendDocument" \
-        -F chat_id="341798814" \
+        -F chat_id="1210616327" \
         -F "disable_web_page_preview=true" \
         -F "parse_mode=html" \
         -F caption="Build took $(($DIFF / 60)) minute(s) and $(($DIFF % 60)) second(s). | For <b>Xiaomi Redmi Note 7/7s (lavender)</b> | <b>$(${GCC}gcc --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g')</b>"
@@ -39,7 +39,7 @@ function push() {
 # Fin Error
 function finerr() {
     curl -s -X POST "https://api.telegram.org/bot1218234700:AAGfkmfWvuMZT-cqgkAeGc4jjTDsY-Fu9IQ/sendMessage" \
-        -d chat_id="341798814" \
+        -d chat_id="1210616327" \
         -d "disable_web_page_preview=true" \
         -d "parse_mode=markdown" \
         -d text="Build throw an error(s)"
